@@ -1,0 +1,3 @@
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/run.dir
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/edit_cache.dir
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/rebuild_cache.dir
