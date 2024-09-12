@@ -1,3 +1,7 @@
-/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/run.dir
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/OpenWeather.dir
 /home/ducanhkhuong/project/C++/learn/build/CMakeFiles/edit_cache.dir
 /home/ducanhkhuong/project/C++/learn/build/CMakeFiles/rebuild_cache.dir
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/list_install_components.dir
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/install.dir
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/install/local.dir
+/home/ducanhkhuong/project/C++/learn/build/CMakeFiles/install/strip.dir

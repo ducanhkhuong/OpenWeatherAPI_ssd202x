@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ducanhkhuong/project/C++/learn/build/CMakeFiles /home/ducanhkhuong/project/C++/learn/build//CMakeFiles/progress.marks
@@ -117,24 +162,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named run
+# Target rules for targets named OpenWeather
 
 # Build rule for target.
-run: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run
-.PHONY : run
+OpenWeather: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OpenWeather
+.PHONY : OpenWeather
 
 # fast build rule for target.
-run/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
-.PHONY : run/fast
+OpenWeather/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenWeather.dir/build.make CMakeFiles/OpenWeather.dir/build
+.PHONY : OpenWeather/fast
 
 main/main.o: main/main.cpp.o
 .PHONY : main/main.o
 
 # target to build an object file
 main/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenWeather.dir/build.make CMakeFiles/OpenWeather.dir/main/main.cpp.o
 .PHONY : main/main.cpp.o
 
 main/main.i: main/main.cpp.i
@@ -142,7 +187,7 @@ main/main.i: main/main.cpp.i
 
 # target to preprocess a source file
 main/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenWeather.dir/build.make CMakeFiles/OpenWeather.dir/main/main.cpp.i
 .PHONY : main/main.cpp.i
 
 main/main.s: main/main.cpp.s
@@ -150,7 +195,7 @@ main/main.s: main/main.cpp.s
 
 # target to generate assembly for a file
 main/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenWeather.dir/build.make CMakeFiles/OpenWeather.dir/main/main.cpp.s
 .PHONY : main/main.cpp.s
 
 # Help Target
@@ -160,8 +205,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... run"
+	@echo "... OpenWeather"
 	@echo "... main/main.o"
 	@echo "... main/main.i"
 	@echo "... main/main.s"
